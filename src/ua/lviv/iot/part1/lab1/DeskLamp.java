@@ -1,4 +1,4 @@
-package ua.lviv.iot.part1.lab1;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,13 +11,10 @@ public class DeskLamp {
     private int brightness = 5;
     private String color = "white";
     private String producer = "Unknown";
-    public DeskLamp(){}
-    public DeskLamp(boolean isOn,int brightness,String color,String producer){
-        this.isOn=isOn;
-        this.brightness=brightness;
-        this.color=color;
-        this.producer=producer;
+
+    public DeskLamp() {
     }
+
 
     public void turnOn() {
         this.isOn = true;
@@ -46,27 +43,22 @@ public class DeskLamp {
     }
 
     private static DeskLamp instance;
-    @Override
-    public String toString()
-    {
-        return "DeskLamp{ "+
-                "isOn="+ isOn+
-                ", brightness=" + brightness +'\''+
-                ", color=" + color +'\'' +
-                ",producer="+producer +
-                '}';
-    }
+
 
     public static void main(String[] args) {
         DeskLamp lamps1 = new DeskLamp();
         DeskLamp lamps2 = new DeskLamp(true, 8, "red", "Producer1");
         DeskLamp lamps3 = DeskLamp.getInstance();
         DeskLamp lamps4 = DeskLamp.getInstance();
-        DeskLamp[] lamps = {lamps1,lamps2,lamps3,lamps4};
-        for (DeskLamp lamp : lamps) {
-            System.out.println(lamp);
+        DeskLamp[] lamps = {lamps1, lamps2, lamps3, lamps4};
+        {
+            System.out.println(lamps);
         }
+        int i = 10;
+        do {
+            System.out.println("lamps1,lamps2,lamps3,lamps4" + i--);
+        } while (i > 0);
     }
 
-}
 
+}
